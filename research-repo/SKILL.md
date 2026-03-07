@@ -36,79 +36,34 @@ touch .gitignore
 touch LICENSE
 ```
 
-**Reference**: See [core-files.md](references/templates/core-files.md) for complete file contents.
+**Templates**: [core-files.md](references/templates/core-files.md) (CLAUDE.md, research-focus.md, classification-guide.md), [git-config.md](references/templates/git-config.md) (.gitignore, LICENSE)
 
 ### Step 2: Configure Domain Specifics
 
+> **💡 Need help with decisions?** If user asks for guidance on defining domain, priorities, or tags, use [setup-wizard.md Phases 1-3](references/setup-wizard.md) for interactive configuration.
+
 Customize these files for your research domain:
 
-#### A. CLAUDE.md
+| File | Purpose | Required Sections | Template |
+|------|---------|-------------------|----------|
+| **CLAUDE.md** | Primary instructions for Claude Code | Repository purpose, primary skills, research focus, essential principles | [template](references/templates/core-files.md#claude-md) |
+| **research-focus.md** | Research priorities and search strategy | Priority definitions (3 tiers), search strategies, decision trees, quality criteria | [template](references/templates/core-files.md#research-focus-md) |
+| **classification-guide.md** | Tagging system and classification standards | Tag categories (3-4), color scheme, selection rules, examples | [template](references/templates/core-files.md#classification-guide-md) |
+| **.gitignore** | Git exclusions | paper_notes/, .claude/, *.log, .DS_Store | [template](references/templates/git-config.md#gitignore) |
+| **LICENSE** | License file | MIT recommended | [template](references/templates/git-config.md#license) |
 
-**Purpose**: Primary instructions for Claude Code when working with this repository.
+**Customization requirements**:
+- Repository name and purpose statement
+- Research priorities (usually 3 tiers: Core focus, Supporting research, Foundational work)
+- Tag categories (3-4 categories, 8-15 total tags)
+- Color scheme with gradients per category
+- Language preferences (README.md only, or bilingual with README_zh.md)
 
-**Required sections**:
-- Repository Purpose (what this repo tracks)
-- Primary Skills (which skills to use and when)
-- Research Focus (quick reference to priorities)
-- Essential Principles (language usage, git workflow)
-- Repository Structure
-- Quick Reference
-
-**Customization needed**:
-- Repository name and purpose
-- Research priorities (what matters most in your domain)
-- Language preferences (keep bilingual if needed)
-- Domain-specific conventions
-
-**Template**: See [CLAUDE.md template](references/templates/core-files.md#claude-md)
-
-#### B. research-focus.md
-
-**Purpose**: Detailed explanation of research priorities and collection strategy.
-
-**Required sections**:
-- Priority definitions (why each priority exists)
-- Search strategies per priority
-- Decision trees for classification
-- Quality criteria
-
-**Customization needed**:
-- Priority levels (usually 3 tiers based on relevance)
-- Search queries specific to your domain
-- Classification logic
-
-**Template**: See [research-focus.md template](references/templates/core-files.md#research-focus-md)
-
-#### C. classification-guide.md
-
-**Purpose**: Complete tagging system and classification standards.
-
-**Required sections**:
-- Tag categories (3-4 categories recommended)
-- Color scheme
-- Tag selection rules
-- Examples per tag
-
-**Customization needed**:
-- Tag names relevant to your domain
-- Color scheme (use gradients per category)
-- Selection rules (e.g., "1 primary + 1-2 secondary")
-
-**Template**: See [classification-guide.md template](references/templates/core-files.md#classification-guide-md)
-
-#### D. .gitignore
-
-**Purpose**: Exclude local notes and Claude-specific files from git.
-
-**Required exclusions**:
-```
-paper_notes/
-.claude/
-*.log
-.DS_Store
-```
+> **📖 FAQ**: For questions about priority levels, tag systems, or language choices, see [faq.md](references/faq.md#priority-and-classification)
 
 ### Step 3: Create Domain-Specific Skills
+
+> **💡 Need guidance?** See [setup-wizard.md Phase 5.5](references/setup-wizard.md#phase-55-create-domain-specific-skills) for detailed skill creation instructions.
 
 Create two core skills in `.claude/skills/`:
 
@@ -116,45 +71,51 @@ Create two core skills in `.claude/skills/`:
 
 **Purpose**: Automated discovery workflow for your research items.
 
-**Key components**:
-1. **Search strategy**: Priority-based queries
-2. **Time filters**: Recent vs. historical
-3. **Filtering logic**: Duplicate detection, classification
-4. **TODO update**: Add newly found items
+**Create skill structure**:
+```bash
+mkdir -p .claude/skills/search-[items]/references
+```
 
-**Customization needed**:
-- Search queries for your domain (30-50 recommended)
-- Priority levels
-- Time filter strategy
-- Sources (arXiv, Google Scholar, specific venues)
+**Required files**:
+| File | Purpose | Template |
+|------|---------|----------|
+| `SKILL.md` | Main skill definition | [search-items template](references/templates/skills/search-items-skill.md) |
+| `references/queries.md` | Domain-specific search queries (30-50 total) | See template in search-items-skill.md |
 
-**Structure**: See [search-items skill template](references/templates/skills/search-items-skill.md)
+**Search query distribution**:
+- Priority 1 (Core focus): 15-20 queries, time filter: oneYear
+- Priority 2 (Supporting): 10-15 queries, time filter: oneMonth
+- Priority 3 (Foundational): 8-10 queries, time filter: noLimit
+
+**Tool**: Use `mcp__web-search-prime__web_search_prime` if available. Alternative: Manual web search or domain-specific search engines (Google Scholar, arXiv, etc.)
 
 #### B. add-[item] Skill (e.g., add-paper)
 
 **Purpose**: Standardized workflow for adding new items to repository.
 
-**Key components**:
-1. **Info confirmation**: Verify all metadata
-2. **Classification**: Determine type/priority
-3. **Tag selection**: Choose appropriate tags
-4. **Summary writing**: Follow template
-5. **Notes creation**: Detailed local notes
-6. **README update**: Synchronized English + translation
-7. **Git commit**: Standardized format
+**Create skill structure**:
+```bash
+mkdir -p .claude/skills/add-[item]/references
+```
 
-**Customization needed**:
-- Entry format (README template)
-- Summary templates (by item type)
-- Notes structure
-- Commit message format
+**Required files**:
+| File | Purpose | Template |
+|------|---------|----------|
+| `SKILL.md` | Main skill definition | [add-item template](references/templates/skills/add-item-skill.md) |
+| `references/notes-template.md` | Local notes structure | See template in add-item-skill.md |
 
-**Structure**: See [add-item skill template](references/templates/skills/add-item-skill.md)
+**Workflow**: Info confirmation → Classification → Tag selection (2-4 tags) → Summary writing (2-3 sentences) → Notes creation → README update → Git commit
+
+> **📖 FAQ**: For questions about skill usage and customization, see [faq.md](references/faq.md#skills-and-workflow)
 
 ### Step 4: Initialize README Files
 
-#### README.md Structure
+| File | Purpose | Template |
+|------|---------|----------|
+| **README.md** | Main repository content (English) | See [readme-entry.md](references/templates/readme-entry.md) for entry format |
+| **README_zh.md** | Chinese translation (optional) | Mirror English structure |
 
+**README.md structure**:
 ```markdown
 # [Domain Name] Research
 
@@ -170,18 +131,10 @@ Curated literature collection for [research area].
 
     > **Source:** Venue Year [[Link]](url)
 
-    2-3 sentence summary.
+    2-3 sentence summary (Purpose → Method → Results).
 ```
 
-**Sections to include**:
-- Introduction
-- Year-based organization (2026, 2025, ...)
-- TODO section (papers to document)
-- License
-
-#### README_zh.md (Optional)
-
-Mirror the English structure with Chinese translations.
+**Organization**: By year (descending) → by month → newest items at top
 
 ### Step 5: Configure Git Workflow
 
@@ -201,40 +154,49 @@ git add README.md README_zh.md TODO.md LICENSE
 git commit -m "Initial commit: [Domain] research repository"
 ```
 
+> **📖 FAQ**: For git workflow questions, see [faq.md](references/faq.md#git-workflow)
+
 ### Step 6: Validate Setup
 
-Run through this checklist:
+**Run through this checklist**:
 
-- [ ] All core files created (README, CLAUDE.md, etc.)
+**Core Files**:
+- [ ] README.md and README_zh.md (if bilingual) initialized
 - [ ] CLAUDE.md customized for domain
 - [ ] research-focus.md has priorities and search queries
 - [ ] classification-guide.md has complete tag system
 - [ ] .gitignore excludes paper_notes/ and .claude/
-- [ ] search-[items] skill created with domain queries
-- [ ] add-[item] skill created with templates
-- [ ] README.md has proper structure
+- [ ] LICENSE file added
+
+**Skills**:
+- [ ] search-[items] skill created (SKILL.md + references/queries.md)
+- [ ] add-[item] skill created (SKILL.md + references/notes-template.md)
+
+**Git**:
 - [ ] Git repository initialized
-- [ ] LICENSE file added (MIT recommended)
+- [ ] First commit created with proper message format
+
+---
 
 ## Reference Materials
 
 ### Quick Reference Navigation
 
-| Resource | Purpose | When to Read |
-|----------|---------|--------------|
-| [setup-wizard.md](references/setup-wizard.md) | Interactive configuration guide | Creating a new repository |
-| [faq.md](references/faq.md) | Common questions and answers | Troubleshooting issues |
-| [templates/core-files.md](references/templates/core-files.md) | CLAUDE.md, research-focus.md, classification-guide.md | Setting up core files |
-| [templates/git-config.md](references/templates/git-config.md) | .gitignore, LICENSE | Git initialization |
-| [templates/skills/search-items-skill.md](references/templates/skills/search-items-skill.md) | search-[items] skill template | Creating search skill |
-| [templates/skills/add-item-skill.md](references/templates/skills/add-item-skill.md) | add-[item] skill template | Creating add skill |
-| [templates/readme-entry.md](references/templates/readme-entry.md) | README entry format | Adding items to README |
+| Resource | Purpose | Trigger Condition |
+|----------|---------|-------------------|
+| [setup-wizard.md](references/setup-wizard.md) | Interactive configuration guide with decision-making support | **User asks for help** with: domain definition, priority setting, tag design, query construction |
+| [faq.md](references/faq.md) | Common questions and troubleshooting | **User encounters issues** or asks about best practices |
+| [templates/core-files.md](references/templates/core-files.md) | CLAUDE.md, research-focus.md, classification-guide.md | **Step 2** - Creating core configuration files |
+| [templates/git-config.md](references/templates/git-config.md) | .gitignore, LICENSE | **Step 2** - Git setup |
+| [templates/skills/search-items-skill.md](references/templates/skills/search-items-skill.md) | search-[items] skill template | **Step 3A** - Creating search skill |
+| [templates/skills/add-item-skill.md](references/templates/skills/add-item-skill.md) | add-[item] skill template | **Step 3B** - Creating add skill |
+| [templates/readme-entry.md](references/templates/readme-entry.md) | README entry format and examples | **Step 4** - Adding items to README |
 
 ### Template Organization
 
 Templates are split into focused modules for efficient loading:
-- **core-files.md** - Primary configuration files
-- **git-config.md** - Git-related setup
+- **core-files.md** - Primary configuration files (CLAUDE.md, research-focus.md, classification-guide.md)
+- **git-config.md** - Git-related setup (.gitignore, LICENSE)
 - **skills/** - Skill-specific templates (search, add)
 - **readme-entry.md** - Entry formatting guide
 
@@ -250,20 +212,10 @@ Templates are split into focused modules for efficient loading:
 
 ### Adaptation Examples
 
-**AI-for-Climate-Change**:
-- Priorities: Climate modeling > Policy analysis > Carbon tracking
-- Tags: Emissions, Modeling, Policy, Adaptation
-- Queries: "climate change LLM", "carbon emissions prediction"
-
-**LLM-for-Education**:
-- Priorities: Personalized learning > Assessment > Content generation
-- Tags: Personalization, Assessment, Tutoring, Multi-modal
-- Queries: "educational dialogue system", "AI tutoring"
-
-**Quantum-Computing-Papers**:
-- Priorities: Algorithms > Hardware > Applications
-- Tags: Algorithms, Hardware, Cryptography, Simulation
-- Queries: "quantum machine learning", "error correction"
+For complete examples of how to adapt this pattern for different domains, see [setup-wizard.md Example Domains](references/setup-wizard.md#example-domains):
+- AI-for-Climate-Change
+- LLM-for-Education
+- Quantum-Computing-Papers
 
 ---
 

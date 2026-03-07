@@ -4,6 +4,51 @@ Common questions and answers about setting up and using research repositories.
 
 ---
 
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Language and Localization](#language-and-localization)
+3. [Priority and Classification](#priority-and-classification)
+4. [Domain Adaptation](#domain-adaptation)
+5. [File Management](#file-management)
+6. [Tags and Classification](#tags-and-classification)
+7. [Git Workflow](#git-workflow)
+8. [Skills and Workflow](#skills-and-workflow)
+9. [Quality and Maintenance](#quality-and-maintenance)
+10. [Collaboration and Sharing](#collaboration-and-sharing)
+11. [Troubleshooting](#troubleshooting)
+
+---
+
+## Getting Started
+
+**Q: Should I read setup-wizard.md or SKILL.md first?**
+
+A: Depends on your needs:
+- **First time setup?** Use [setup-wizard.md](setup-wizard.md) for interactive, step-by-step guidance with decision-making support
+- **Experienced user?** Use SKILL.md Quick Workflow for direct execution
+- **Need help with decisions?** setup-wizard.md Phases 1-3 walk you through domain definition, priorities, and tag design
+
+**Q: Where do I find templates for X?**
+
+A: Quick reference guide:
+
+| Need | Template Location |
+|------|-------------------|
+| Core files (CLAUDE.md, research-focus.md, classification-guide.md) | [templates/core-files.md](templates/core-files.md) |
+| Git config (.gitignore, LICENSE) | [templates/git-config.md](templates/git-config.md) |
+| Search skill | [templates/skills/search-items-skill.md](templates/skills/search-items-skill.md) |
+| Add skill | [templates/skills/add-item-skill.md](templates/skills/add-item-skill.md) |
+| README entry format | [templates/readme-entry.md](templates/readme-entry.md) |
+
+**Q: How do I create the search-[items] and add-[item] skills?**
+
+A: Use [setup-wizard.md Phase 5.5](setup-wizard.md#phase-55-create-domain-specific-skills) for step-by-step guidance. Or see the skill templates directly:
+- [search-items-skill.md Creation Steps](templates/skills/search-items-skill.md#creation-steps)
+- [add-item-skill.md Creation Steps](templates/skills/add-item-skill.md#creation-steps)
+
+---
+
 ## Language and Localization
 
 **Q: Should I keep the bilingual structure?**
@@ -103,7 +148,7 @@ A: Recommended workflow:
 
 **Q: What's the commit message format for updates?**
 
-A: Use these formats:
+A: See SKILL.md Step 5 for the standard format. The patterns are:
 - Add: `Add paper: Title (Venue Year)`
 - Update: `Update paper: Title - description of update`
 - Fix: `Fix: issue description`
@@ -124,7 +169,11 @@ Manual search is fine for quick lookups or following citation trails.
 
 **Q: Can I customize the skills for my specific workflow?**
 
-A: Absolutely. The skill templates are starting points. Modify them to fit your workflow, but keep the core structure (search → classify → add → commit).
+A: Absolutely. See the complete skill templates:
+- [search-items-skill.md](templates/skills/search-items-skill.md)
+- [add-item-skill.md](templates/skills/add-item-skill.md)
+
+Modify them to fit your workflow, but keep the core structure (search → classify → add → commit).
 
 **Q: What if I don't need both search-[items] and add-[item] skills?**
 
@@ -141,8 +190,8 @@ A: You can create a combined skill, but separating them has advantages:
 
 A: Follow these practices:
 - Always use the add-[item] skill (enforces templates)
+- See [readme-entry.md Summary Writing Guidelines](templates/readme-entry.md#summary-writing-guidelines) for structure
 - Review classification-guide.md when unsure
-- Use the summary templates (2-3 sentences)
 - Have Claude validate against quality checklist
 
 **Q: How often should I update the repository?**

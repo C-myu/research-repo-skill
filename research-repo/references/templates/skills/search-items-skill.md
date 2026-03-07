@@ -4,6 +4,19 @@ Template for creating automated discovery workflow for research items.
 
 ---
 
+## Table of Contents
+
+1. [SKILL.md Template](#skillmd-template) - Complete skill definition template
+2. [Creation Steps](#creation-steps) - How to generate the skill from this template
+3. [Template Placeholders](#template-placeholders) - Placeholder value reference table
+4. [Additional Files to Create](#additional-files-to-create) - Search queries template structure
+
+---
+
+## SKILL.md Template
+
+Complete skill definition template for the search-[items] skill. Copy this content into the skill's SKILL.md file after replacing placeholders.
+
 ```markdown
 ---
 name: search-[items]
@@ -35,7 +48,8 @@ description: Search and collect latest [items] for [DOMAIN NAME] using priority-
 - Set time_filter and location parameters
 
 **Step 2: Execute searches**
-- Use `mcp__web-search-prime__web_search_prime` for each query
+- Preferred: `mcp__web-search-prime__web_search_prime` (if available)
+- Alternative: Manual web search or domain-specific search engines
 - Search by priority: P1 queries → P2 queries → P3 queries
 - See references/queries.md for complete query list
 
@@ -157,7 +171,7 @@ Organized by priority level for [DOMAIN NAME].
 **Search parameters**:
 - Location: [us/cn] - Set based on domain
 - Content size: medium
-- Tool: mcp__web-search-prime__web_search_prime
+- Tool: `mcp__web-search-prime__web_search_prime` (preferred) or manual search (alternative)
 ```
 
 **Note**: Populate queries during setup based on domain-specific research focus. Use setup-wizard.md Phase 4 for guidance on constructing effective queries.

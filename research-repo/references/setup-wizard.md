@@ -6,6 +6,43 @@ This guide walks you through configuring a new research repository step-by-step.
 
 ---
 
+## Table of Contents
+
+1. [Phase 1: Define Your Domain](#phase-1-define-your-domain)
+   - Domain Name
+   - Repository Purpose Statement
+2. [Phase 2: Define Research Priorities](#phase-2-define-research-priorities)
+   - Identify Priority Levels
+   - Write Priority Justification
+3. [Phase 3: Create Tag Taxonomy](#phase-3-create-tag-taxonomy)
+   - Define Tag Categories
+   - Define Tags per Category
+   - Assign Color Scheme
+   - Define Tag Selection Rules
+4. [Phase 4: Write Search Queries](#phase-4-write-search-queries)
+   - Brainstorm Query Categories
+   - Construct Search Queries
+   - Define Time Filters
+5. [Phase 5: Customize Templates](#phase-5-customize-templates)
+   - Define Item Types
+   - Write Summary Templates
+   - Configure Language Settings
+   - Configure Git Workflow
+   - Create Domain-Specific Skills
+6. [Phase 6: Validate Configuration](#phase-6-validate-configuration)
+   - Review Checklist
+   - Test Workflow
+7. [Phase 7: Launch](#phase-7-launch)
+   - Initial Commit
+   - Create First Entries
+   - Publish
+8. [Example Domains](#example-domains)
+   - AI-for-Climate-Change
+   - LLM-for-Education
+   - Quantum-Computing-Papers
+
+---
+
 ## Phase 1: Define Your Domain
 
 ### Step 1.1: Domain Name
@@ -359,22 +396,12 @@ Identify the main categories/types of items in your domain.
 
 For each item type, create a 2-3 sentence summary template.
 
-**Template structure:**
-1. What the [item] proposes/presents
-2. Method/approach and key capability
-3. Results and impact
+**Structure**: Purpose → Method → Results
 
-**Example:**
-```
-Type: Architecture Papers
-Template: "Proposes [Framework], a [technique]-based architecture. Uses [method] for [capability]. Achieves [results] on [dataset]."
-
-Type: Optimization Methods
-Template: "Presents [Name] optimization technique with [N] improvements. Achieves [speedup] speedup on [benchmark]."
-
-Type: Foundational
-Template: "Focuses on [task] rather than novel architectures. Introduces [Method] for [capability]. Provides [benefit]."
-```
+See [readme-entry.md Summary Writing Guidelines](templates/readme-entry.md#summary-writing-guidelines) for:
+- Complete structure explanation
+- Templates by item type
+- Writing requirements
 
 **Output**: Summary templates for add-[item] skill
 
@@ -407,14 +434,7 @@ README_es.md: Spanish
 
 ### Step 5.4: Configure Git Workflow
 
-Define commit message format.
-
-**Template:**
-```
-Add: "Add [item]: Title (Venue Year)"
-Update: "Update [item]: Title - description"
-Fix: "Fix: issue description"
-```
+Define commit message format. See SKILL.md Step 5 for the standard format.
 
 **Customize [item] noun**:
 - "paper" for academic papers
@@ -438,34 +458,16 @@ Create two skills that will automate the research workflow for this domain.
 
 **Creation steps**:
 
-1. **Prepare placeholder values**:
-   - [items]: e.g., "papers", "articles"
-   - [item]: e.g., "paper", "article"
-   - [DOMAIN NAME]: Your research domain
-   - [Domain]: Short domain name
-   - [Core focus], [Secondary], [Foundational]: Priority names
+See [search-items-skill.md Creation Steps](templates/skills/search-items-skill.md#creation-steps) for complete instructions.
 
-2. **Create skill structure**:
-```bash
-mkdir -p .claude/skills/search-[items]/references
-```
-
-3. **Write SKILL.md**:
-   - Use the template from search-items-skill.md
-   - Replace all placeholders with domain-specific values
-   - Ensure YAML frontmatter is correct
-
-4. **Write references/queries.md**:
-   - Use the template from search-items-skill.md
-   - Populate with 30-50 search queries from Phase 4
-   - Organize by priority (P1: 15-20, P2: 10-15, P3: 8-10)
-   - Set time filters and location
-
-5. **Validate** (optional):
-   - Run `/skill-creator` to check the skill structure
-   - If skill-creator is not available:
-     - Download skill-creator folder from: [skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator)
-     - Copy to: `~/.claude/skills/skill-creator/`
+**For this domain, prepare these values**:
+- [items]: [fill in, e.g., "papers", "articles"]
+- [item]: [fill in, e.g., "paper", "article"]
+- [DOMAIN NAME]: [fill in your research domain]
+- [Domain]: [fill in short domain name]
+- [Core focus]: [fill in Priority 1 name]
+- [Secondary]: [fill in Priority 2 name]
+- [Foundational]: [fill in Priority 3 name]
 
 **Output**: Fully functional `search-[items]` skill
 
@@ -477,29 +479,12 @@ mkdir -p .claude/skills/search-[items]/references
 
 **Creation steps**:
 
-1. **Prepare placeholder values**:
-   - [item]: e.g., "paper", "article"
-   - [items]: e.g., "papers", "articles"
-   - [lang]: e.g., "zh", "es"
+See [add-item-skill.md Creation Steps](templates/skills/add-item-skill.md#creation-steps) for complete instructions.
 
-2. **Create skill structure**:
-```bash
-mkdir -p .claude/skills/add-[item]/references
-```
-
-3. **Write SKILL.md**:
-   - Use the template from add-item-skill.md
-   - Replace all placeholders with domain-specific values
-   - Ensure YAML frontmatter is correct
-
-4. **Write references/notes-template.md**:
-   - Use the template from add-item-skill.md
-   - Customize the note structure based on domain needs
-   - Set language to match CLAUDE.md settings
-
-5. **Validate** (optional):
-   - Run `/skill-creator` to check the skill structure
-   - See Step 5.5.1 for installation instructions if needed
+**For this domain, prepare these values**:
+- [item]: [fill in, e.g., "paper", "article"]
+- [items]: [fill in, e.g., "papers", "articles"]
+- [lang]: [fill in secondary language code, e.g., "zh", "es"]
 
 **Output**: Fully functional `add-[item]` skill
 

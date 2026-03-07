@@ -4,6 +4,19 @@ Template for creating standardized workflow to add new items to the repository.
 
 ---
 
+## Table of Contents
+
+1. [SKILL.md Template](#skillmd-template) - Complete skill definition template
+2. [Creation Steps](#creation-steps) - How to generate the skill from this template
+3. [Template Placeholders](#template-placeholders) - Placeholder value reference table
+4. [Additional Files to Create](#additional-files-to-create) - Notes template structure
+
+---
+
+## SKILL.md Template
+
+Complete skill definition template for the add-[item] skill. Copy this content into the skill's SKILL.md file after replacing placeholders.
+
 ```markdown
 ---
 name: add-[item]
@@ -112,54 +125,52 @@ File: `item_notes/YYYY-MM-DD_Title.md`
 ```markdown
 # [Item Title]
 
-## 基本信息
+## Basic Information
 
-- **作者**: [Author list]
-- **机构**: [Institutions]
-- **日期**: [Date]
-- **链接**: [URL]
-- **标签**: [Tags]
-- **类型**: [Priority X - Type]
+- **Authors**: [Author list]
+- **Institutions**: [Institutions]
+- **Date**: [Date]
+- **Link**: [URL]
+- **Tags**: [Tags]
+- **Type**: [Priority X - Type]
 
-## 核心贡献
+## Core Contributions
 
 1. [Contribution 1]
 2. [Contribution 2]
 3. [Contribution 3]
 4. [Contribution 4]
 
-## 方法详解
+## Method Details
 
 [Technical approach details]
 
-## 实验结果
+## Experimental Results
 
 [Experimental results and data]
 
-## 讨论要点
+## Key Discussion Points
 
 [Key insights from [item]]
 
-## 创新与局限
+## Innovations and Limitations
 
-**创新点:**
+**Innovations:**
 - [Innovation 1]
 - [Innovation 2]
 
-**局限性:**
+**Limitations:**
 - [Limitation 1]
 - [Limitation 2]
 
-## 与其他工作的关系
+## Relationship to Other Work
 
 [Relationship to other work]
 
-## 总结
+## Summary
 
 [Overall evaluation and takeaways]
 ```
 
-**Language**: Use primary language specified in CLAUDE.md
+**Note**: This template is in English. Customize section headings and structure to match the primary language specified in CLAUDE.md during skill setup.
 ```
-
-**Note**: Customize the template structure above based on domain-specific needs during skill setup.
