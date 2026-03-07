@@ -1,0 +1,40 @@
+# Packaged skill files
+*.skill
+
+# Backup directories
+.backup/
+*.backup/
+
+# Research repository local files (when using this skill)
+paper_notes/
+item_notes/
+
+# Python
+__pycache__/
+*.py[cod]
+*$pyclass
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
