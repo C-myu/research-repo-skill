@@ -81,8 +81,9 @@ your-repo/
 /skill-install path/to/research-repo.skill
 
 # Option 2: Clone repository
-cd ~/.claude/skills/
-git clone https://github.com/C-myu/research-repo-skill.git
+cd /tmp && git clone https://github.com/C-myu/research-repo-skill.git
+cp -r research-repo-skill/research-repo ~/.claude/skills/
+rm -rf research-repo-skill
 ```
 
 ### Create Your First Repository

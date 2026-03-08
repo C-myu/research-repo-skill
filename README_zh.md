@@ -81,8 +81,9 @@ your-repo/
 /skill-install path/to/research-repo.skill
 
 # 方式 2：克隆仓库
-cd ~/.claude/skills/
-git clone https://github.com/C-myu/research-repo-skill.git
+cd /tmp && git clone https://github.com/C-myu/research-repo-skill.git
+cp -r research-repo-skill/research-repo ~/.claude/skills/
+rm -rf research-repo-skill
 ```
 
 ### 创建你的第一个论文库
