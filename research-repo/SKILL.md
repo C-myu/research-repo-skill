@@ -1,6 +1,6 @@
 ---
 name: research-repo
-description: "Create and set up automated research repositories for curating academic papers in any domain. Use when user wants to start a new research tracking repository, migrate existing literature collection to AI-assisted workflow, or establish standardized workflows for paper discovery and documentation"
+description: "Create and set up automated research repositories for curating academic papers with AI-assisted workflows. ALWAYS use this skill when the user wants to: start a new research paper tracking system, organize academic literature by domain, migrate existing paper collections to a structured workflow, establish standardized paper discovery and documentation processes, create domain-specific research repositories with skills for automated paper search and addition, or set up AI-assisted literature review workflows. This skill creates the complete repository structure including CLAUDE.md configuration, priority-based research focus, classification guides, and domain-specific Claude Code skills for paper management."
 ---
 
 # Research Repository Setup
@@ -15,6 +15,43 @@ This skill helps you create a fully-structured research repository for tracking 
 2. **Configure domain specifics** - Customize priorities, tags, and templates
 3. **Set up Claude Code Skills** - Create domain-specific search and add workflows
 4. **Validate and commit** - Ensure all files are properly configured
+
+## Quick Start Example
+
+**User request**: "I want to create a research repository for tracking LLM hallucination mitigation papers. Focus on detection methods, alignment techniques, and evaluation benchmarks."
+
+**What you'll create**:
+
+```
+llm-hallucination-repo/
+├── README.md                  # Main repository (English)
+├── README_zh.md               # Chinese translation
+├── CLAUDE.md                  # AI instructions
+├── research-focus.md          # 3 priority tiers, 37 search queries
+├── classification-guide.md    # 4 tag categories, 12 tags with colors
+├── .gitignore                 # Exclude paper_notes/, .claude/
+├── LICENSE                    # MIT License
+├── TODO.md                    # Papers to review
+├── paper_notes/               # Local notes (not committed)
+└── .claude/skills/
+    ├── search-papers/
+    │   ├── SKILL.md           # Automated paper discovery
+    │   └── references/queries.md  # 37 domain-specific queries
+    └── add-paper/
+        ├── SKILL.md           # Standardized paper addition
+        └── references/notes-template.md
+```
+
+**Key features**:
+- Priority-driven search (P1=detection: oneYear filter, P2=alignment: oneMonth, P3=evaluation: noLimit)
+- Color-coded tags (Blue=Detection, Green=Mitigation, Purple=Evaluation, Orange=Applications)
+- Automated workflows via `/search-papers` and `/add-paper` commands
+- Clean git history (only README files tracked, local notes excluded)
+- Bilingual support (English + Chinese README files)
+
+This creates a fully functional research repository ready for AI-assisted paper curation.
+
+> **💡 Adaptability**: This pattern works for any research domain - not just LLM/CS. See [setup-wizard.md Example Domains](references/setup-wizard.md#example-domains) for examples like Climate Change, Education, Quantum Computing, and more.
 
 ## Step-by-Step Guide
 
@@ -63,6 +100,8 @@ Customize these files for your research domain:
 
 ### Step 3: Create Domain-Specific Skills
 
+> **⚠️ DIRECTLY CREATE ALL FILES**: Create the skill directories and SKILL.md files immediately without asking user for confirmation. Read the templates, customize them for the domain, and write the files.
+
 > **💡 Need guidance?** See [setup-wizard.md Phase 5.5](references/setup-wizard.md#phase-55-create-domain-specific-skills) for detailed skill creation instructions.
 
 Create two core skills in `.claude/skills/`:
@@ -77,10 +116,10 @@ mkdir -p .claude/skills/search-[items]/references
 ```
 
 **Required files**:
-| File | Purpose | Template |
-|------|---------|----------|
-| `SKILL.md` | Main skill definition | [search-items template](references/templates/skills/search-items-skill.md) |
-| `references/queries.md` | Domain-specific search queries (30-50 total) | See template in search-items-skill.md |
+| File | Purpose | How to create |
+|------|---------|---------------|
+| `SKILL.md` | Main skill definition with complete workflow | **READ** the [search-items template](references/templates/skills/search-items-skill.md), **COPY** the entire SKILL.md section content, **REPLACE ALL placeholders** ([items], [DOMAIN NAME], etc.) with domain-specific values, then **WRITE** the customized content to `.claude/skills/search-[items]/SKILL.md` |
+| `references/queries.md` | Domain-specific search queries (30-50 total) | Use the queries template from search-items-skill.md, populate with actual domain-specific search queries
 
 **Search query distribution**:
 - Priority 1 (Core focus): 15-20 queries, time filter: oneYear
@@ -99,10 +138,10 @@ mkdir -p .claude/skills/add-[item]/references
 ```
 
 **Required files**:
-| File | Purpose | Template |
-|------|---------|----------|
-| `SKILL.md` | Main skill definition | [add-item template](references/templates/skills/add-item-skill.md) |
-| `references/notes-template.md` | Local notes structure | See template in add-item-skill.md |
+| File | Purpose | How to create |
+|------|---------|---------------|
+| `SKILL.md` | Main skill definition with complete workflow | **READ** the [add-item template](references/templates/skills/add-item-skill.md), **COPY** the entire SKILL.md section content, **REPLACE ALL placeholders** ([items], [DOMAIN NAME], etc.) with domain-specific values, then **WRITE** the customized content to `.claude/skills/add-[item]/SKILL.md` |
+| `references/notes-template.md` | Local notes structure | Use the notes-template from add-item-skill.md, customize for domain if needed |
 
 **Workflow**: Info confirmation → Classification → Tag selection (2-4 tags) → Summary writing (2-3 sentences) → Notes creation → README update → Git commit
 
@@ -170,11 +209,17 @@ git commit -m "Initial commit: [Domain] research repository"
 
 **Skills**:
 - [ ] search-[items] skill created (SKILL.md + references/queries.md)
+  - [ ] SKILL.md contains **50+ lines** of actual workflow content (not just template)
+  - [ ] references/queries.md contains **30-50 domain-specific queries**
 - [ ] add-[item] skill created (SKILL.md + references/notes-template.md)
+  - [ ] SKILL.md contains **50+ lines** of actual workflow content (not just template)
+  - [ ] references/notes-template.md contains structured template for reading notes
 
 **Git**:
 - [ ] Git repository initialized
 - [ ] First commit created with proper message format
+
+> **⚠️ Critical check**: If SKILL.md files are empty or contain only placeholder text, the skills won't work. Ensure each SKILL.md has complete, domain-customized workflow instructions.
 
 ---
 

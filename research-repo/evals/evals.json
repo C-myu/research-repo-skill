@@ -1,0 +1,93 @@
+{
+  "skill_name": "research-repo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to create a research repository for tracking AI for Mental Health papers. The focus should be on multi-turn dialogue systems for mental health support. I need help setting up the directory structure, configuration files, and domain-specific skills.",
+      "expected_output": "A complete research repository structure with: directory layout created (your-domain-repo/, .claude/skills/, paper_notes/), core configuration files customized (CLAUDE.md, research-focus.md, classification-guide.md, README.md, .gitignore, LICENSE), and two domain-specific skills (search-papers and add-paper) created with proper templates.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "core_files_created",
+          "text": "Core configuration files exist: CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE"
+        },
+        {
+          "name": "directory_structure_created",
+          "text": "Required directories exist: paper_notes/, .claude/skills/"
+        },
+        {
+          "name": "claude_md_customized",
+          "text": "CLAUDE.md is customized for AI for Mental Health domain with specific repository purpose"
+        },
+        {
+          "name": "priorities_defined",
+          "text": "research-focus.md defines 3 priority levels specific to mental health dialogue systems"
+        },
+        {
+          "name": "tags_defined",
+          "text": "classification-guide.md defines 3-4 tag categories with 8-15 total tags"
+        },
+        {
+          "name": "skills_created",
+          "text": "Domain-specific skills created: .claude/skills/search-papers/ and .claude/skills/add-paper/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Help me migrate my existing literature collection on LLM for Education to an AI-assisted research workflow. I want to set up standardized tagging, automated search, and paper tracking with git-based version control.",
+      "expected_output": "Repository structure with focus on LLM for Education domain, including: 3-tier priority system (e.g., Personalized Learning, Assessment, Content Generation), 8-15 tags across 3-4 categories with color-coded badges, search-papers skill with 30-50 queries distributed across priorities, add-paper skill with standardized workflow, and proper git workflow configuration.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "core_files_created",
+          "text": "Core configuration files exist: CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE"
+        },
+        {
+          "name": "priorities_llm_specific",
+          "text": "research-focus.md defines LLM for Education-specific priorities (e.g., Educational Applications, LLM Techniques, Foundational Work)"
+        },
+        {
+          "name": "search_queries_provided",
+          "text": "research-focus.md contains 30-50 search queries distributed across priorities"
+        },
+        {
+          "name": "tags_with_colors",
+          "text": "classification-guide.md defines tags with color-coded badge URLs"
+        },
+        {
+          "name": "git_workflow_configured",
+          "text": "CLAUDE.md specifies git workflow (commit only README files, proper commit message format)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I need to start tracking quantum computing research papers. Focus areas: quantum algorithms (highest priority), quantum hardware construction, and quantum applications. Set up the complete repository with bilingual support (English and Chinese).",
+      "expected_output": "Bilingual research repository (README.md and README_zh.md) with quantum-computing-specific configuration: Priority 1 (Quantum Algorithms), Priority 2 (Quantum Hardware), Priority 3 (Quantum Applications), complete tag system (e.g., Data: Benchmark/Simulation/Real_World, Method: VQA/QAOA/Optimization, Application: Chemistry/Finance/ML), and both search-papers and add-paper skills created.",
+      "files": [],
+      "assertions": [
+        {
+          "name": "bilingual_readme",
+          "text": "Both README.md (English) and README_zh.md (Chinese) exist with translated content"
+        },
+        {
+          "name": "quantum_priorities",
+          "text": "research-focus.md defines quantum-specific priorities: Algorithms (P1), Hardware (P2), Applications (P3)"
+        },
+        {
+          "name": "quantum_tags",
+          "text": "classification-guide.md defines quantum-specific tags (e.g., VQA, QAOA, Error_Correction, Fault_Tolerant)"
+        },
+        {
+          "name": "skills_created",
+          "text": "Domain-specific skills created: .claude/skills/search-papers/ and .claude/skills/add-paper/"
+        },
+        {
+          "name": "readme_tag_badges",
+          "text": "README files contain badge URLs for tags with proper color coding"
+        }
+      ]
+    }
+  ]
+}
