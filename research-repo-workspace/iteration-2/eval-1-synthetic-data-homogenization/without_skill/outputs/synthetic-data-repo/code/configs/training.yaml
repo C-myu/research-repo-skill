@@ -1,0 +1,42 @@
+# Model Training Configuration
+
+model:
+  name: "gpt2"
+  pretrained: true
+  from_checkpoint: null
+
+data:
+  train_path: "data/synthetic/gen-1"
+  validation_path: "data/evaluation"
+  real_data_ratio: 0.0  # 0.0 = all synthetic, 1.0 = all real
+  mix_strategy: "random"  # random, curriculum, alternating
+
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 4
+  num_epochs: 3
+  learning_rate: 5e-5
+  warmup_steps: 500
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+
+optimization:
+  optimizer: "adamw"
+  scheduler: "cosine"
+  fp16: true
+  gradient_checkpointing: false
+
+evaluation:
+  eval_every: 500
+  metrics:
+    - perplexity
+    - diversity
+    - vocabulary_richness
+    - task_performance
+
+logging:
+  output_dir: "results"
+  logging_dir: "results/logs"
+  wandb_project: "synthetic-data-homogenization"
+  log_every: 10
+  save_every: 1000

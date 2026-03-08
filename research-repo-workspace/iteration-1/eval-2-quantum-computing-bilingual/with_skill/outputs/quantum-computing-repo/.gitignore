@@ -1,0 +1,22 @@
+# Local notes (never commit)
+paper_notes/
+
+# Claude-specific files
+.claude/
+
+# Log files
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak

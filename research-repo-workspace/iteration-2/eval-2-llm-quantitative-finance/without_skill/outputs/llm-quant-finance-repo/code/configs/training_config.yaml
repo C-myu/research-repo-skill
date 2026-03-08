@@ -1,0 +1,175 @@
+# Training Configuration for LLM Quantitative Finance Models
+
+# Model Configuration
+model:
+  name: "financial_bert"
+  pretrained_model: "ProsusAI/finbert"
+  num_labels: 3  # positive, neutral, negative
+  max_length: 512
+  dropout: 0.1
+
+# Training Hyperparameters
+training:
+  num_epochs: 10
+  batch_size: 16
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_steps: 500
+  gradient_accumulation_steps: 1
+  max_grad_norm: 1.0
+
+  # Optimizer settings
+  optimizer: "adamw"
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+
+  # Learning rate scheduler
+  scheduler: "linear"  # linear, cosine, constant
+  num_warmup_steps: 500
+
+# Data Configuration
+data:
+  train_path: "data/processed/sentiment_train.parquet"
+  val_path: "data/processed/sentiment_val.parquet"
+  test_path: "data/processed/sentiment_test.parquet"
+
+  text_column: "text"
+  label_column: "sentiment"
+
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+  # Data augmentation
+  augmentation:
+    enabled: false
+    methods: ["back_translation", "synonym_replacement"]
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1"
+    - "auc"
+
+  eval_strategy: "epoch"  # epoch, steps
+  eval_steps: 500
+  save_strategy: "epoch"
+  save_total_limit: 3
+
+  # Early stopping
+  early_stopping:
+    enabled: true
+    patience: 3
+    min_delta: 0.001
+
+# Logging and Tracking
+logging:
+  log_level: "INFO"
+  logging_steps: 100
+  log_model: true
+
+  # MLflow tracking
+  mlflow:
+    enabled: true
+    experiment_name: "financial_sentiment_analysis"
+    tracking_uri: "./mlruns"
+
+  # Weights & Biases
+  wandb:
+    enabled: false
+    project: "llm-quant-finance"
+    entity: null
+
+# Hardware Configuration
+hardware:
+  device: "cuda"  # cuda, cpu, mps
+  num_workers: 4
+  pin_memory: true
+  mixed_precision: true  # Use FP16
+
+  # Distributed training
+  distributed:
+    enabled: false
+    backend: "nccl"
+    world_size: 1
+
+# Reproducibility
+reproducibility:
+  seed: 42
+  deterministic: true
+  benchmark: false
+
+# Output Configuration
+output:
+  output_dir: "./outputs"
+  checkpoint_dir: "./checkpoints"
+  log_dir: "./logs"
+
+  # Model saving
+  save_best_only: true
+  save_optimizer: false
+  save_weights_only: false
+
+# Experiment-Specific Settings
+experiments:
+  sentiment_analysis:
+    threshold: 0.5
+    aggregation_method: "mean"
+
+  price_prediction:
+    sequence_length: 30  # days
+    prediction_horizon: 5  # days
+    features:
+      - "returns"
+      - "volume"
+      - "volatility"
+      - "sentiment"
+
+  risk_management:
+    var_confidence: 0.95
+    cvar_confidence: 0.95
+    lookback_period: 252  # trading days
+
+# Financial Domain Settings
+financial:
+  trading_days_per_year: 252
+  risk_free_rate: 0.02
+
+  # Assets
+  tickers:
+    - "AAPL"
+    - "MSFT"
+    - "GOOGL"
+    - "AMZN"
+    - "TSLA"
+
+  # Data sources
+  data_sources:
+    market_data: "yfinance"
+    news_data: "newsapi"
+    social_data: "twitter_api"
+
+# Advanced Settings
+advanced:
+  # Hyperparameter tuning
+  hyperparameter_tuning:
+    enabled: false
+    n_trials: 100
+    timeout: 3600
+    direction: "maximize"  # maximize or minimize
+    metric: "eval_f1"
+
+  # Model interpretation
+  interpretation:
+    enabled: true
+    methods: ["attention_weights", "shap", "lime"]
+
+  # A/B testing
+  ab_testing:
+    enabled: false
+    test_size: 0.2
+    power: 0.8
+    significance_level: 0.05

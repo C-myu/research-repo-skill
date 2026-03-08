@@ -1,0 +1,35 @@
+{
+  "eval_id": 2,
+  "eval_name": "llm-quantitative-finance",
+  "prompt": "I need to establish a research repository for LLM applications in quantitative finance. Priority areas: LLM for financial analysis and prediction (highest), risk management and portfolio optimization with LLMs, and market sentiment analysis using large language models. Include financial-domain specific tags and terminology.",
+  "assertions": [
+    {
+      "name": "core_files_created",
+      "text": "Core configuration files exist: README.md, CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE"
+    },
+    {
+      "name": "git_initialized",
+      "text": "Git repository initialized with initial commit"
+    },
+    {
+      "name": "skills_created_with_content",
+      "text": "Domain-specific skills created: .claude/skills/search-papers/SKILL.md and .claude/skills/add-paper/SKILL.md exist with content"
+    },
+    {
+      "name": "skills_references",
+      "text": "Skills have reference files: search-papers/references/queries.md and add-paper/references/notes-template.md exist"
+    },
+    {
+      "name": "bilingual_support",
+      "text": "Bilingual README files: both README.md and README_zh.md exist"
+    },
+    {
+      "name": "research_focus_priorities",
+      "text": "research-focus.md contains 3 priority levels with search queries"
+    },
+    {
+      "name": "domain_specific_content",
+      "text": "Repository contains financial-domain specific terminology and tags as requested"
+    }
+  ]
+}

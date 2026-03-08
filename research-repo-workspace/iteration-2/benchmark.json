@@ -1,0 +1,108 @@
+{
+  "skill_name": "research-repo",
+  "iteration": 2,
+  "summary": {
+    "with_skill": {
+      "pass_rate": 1.0,
+      "pass_rate_stddev": 0.0,
+      "avg_time_seconds": null,
+      "avg_time_stddev": null,
+      "avg_tokens": null,
+      "avg_tokens_stddev": null
+    },
+    "without_skill": {
+      "pass_rate": 0.048,
+      "pass_rate_stddev": 0.082,
+      "avg_time_seconds": null,
+      "avg_time_stddev": null,
+      "avg_tokens": null,
+      "avg_tokens_stddev": null
+    }
+  },
+  "delta": {
+    "pass_rate": 0.952,
+    "avg_time_seconds": null,
+    "avg_tokens": null
+  },
+  "evals": [
+    {
+      "eval_id": 0,
+      "eval_name": "llm-hallucination-mitigation",
+      "configurations": [
+        {
+          "name": "with_skill",
+          "pass_rate": 1.0,
+          "total_assertions": 6,
+          "passed_assertions": 6,
+          "time_seconds": null,
+          "tokens": null
+        },
+        {
+          "name": "without_skill",
+          "pass_rate": 0.0,
+          "total_assertions": 6,
+          "passed_assertions": 0,
+          "time_seconds": null,
+          "tokens": null
+        }
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "synthetic-data-homogenization",
+      "configurations": [
+        {
+          "name": "with_skill",
+          "pass_rate": 1.0,
+          "total_assertions": 6,
+          "passed_assertions": 6,
+          "time_seconds": null,
+          "tokens": null
+        },
+        {
+          "name": "without_skill",
+          "pass_rate": 0.0,
+          "total_assertions": 6,
+          "passed_assertions": 0,
+          "time_seconds": null,
+          "tokens": null
+        }
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "llm-quantitative-finance",
+      "configurations": [
+        {
+          "name": "with_skill",
+          "pass_rate": 1.0,
+          "total_assertions": 7,
+          "passed_assertions": 7,
+          "time_seconds": null,
+          "tokens": null
+        },
+        {
+          "name": "without_skill",
+          "pass_rate": 0.143,
+          "total_assertions": 7,
+          "passed_assertions": 1,
+          "time_seconds": null,
+          "tokens": null
+        }
+      ]
+    }
+  ],
+  "analyst_observations": [
+    "**Perfect Performance**: with_skill achieved 100% pass rate across all 3 evals (19/19 assertions passed). The skill consistently produces the expected research-repo structure with all core files, skills, and configuration.",
+    "",
+    "**without_skill Different Approach**: without_skill created valid research repositories but followed a traditional academic project structure (papers/, code/, data/, notes/) instead of the research-repo skill's specific workflow-oriented design. This resulted in 0% pass rate for eval-0 and eval-1, and only 14% for eval-2.",
+    "",
+    "**Key Differentiator**: The research-repo skill creates: (1) CLAUDE.md for AI collaboration, (2) research-focus.md with priority-based search strategy, (3) classification-guide.md with structured tag system, (4) Domain-specific skills (search-papers, add-paper), (5) Git repository with proper commit discipline. without_skill outputs lack these workflow-specific components.",
+    "",
+    "**Domain Customization**: Both with_skill and without_skill incorporated domain-specific content (LLM hallucination, synthetic data, quantitative finance), but only with_skill maintained the structured skill-based workflow.",
+    "",
+    "**95.2 Percentage Point Improvement**: The delta shows with_skill outperforms without_skill by 95.2 percentage points on average (100% vs 4.8%), demonstrating the skill's effectiveness in creating consistent, workflow-oriented research repositories.",
+    "",
+    "**Comparison with Iteration-1**: Iteration-1 showed 87.7% vs 33.3% (54.3 point delta). Iteration-2 shows 100% vs 4.8% (95.2 point delta). The improved discrimination suggests the new test topics better highlight the skill's value proposition."
+  ]
+}

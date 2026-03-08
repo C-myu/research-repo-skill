@@ -1,0 +1,6 @@
+{
+  "eval_id": 2,
+  "eval_name": "quantum-computing-bilingual",
+  "prompt": "I need to start tracking quantum computing research papers. Focus areas: quantum algorithms (highest priority), quantum hardware construction, and quantum applications. Set up the complete repository with bilingual support (English and Chinese).",
+  "assertions": []
+}

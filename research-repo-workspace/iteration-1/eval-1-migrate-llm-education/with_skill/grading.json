@@ -1,0 +1,40 @@
+{
+  "assertions_evaluated": [
+    {
+      "text": "Core configuration files exist: CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE",
+      "passed": true,
+      "evidence": "All 5 core files exist: CLAUDE.md (1958 bytes), research-focus.md (7806 bytes), classification-guide.md (8088 bytes), .gitignore (214 bytes), LICENSE (1083 bytes)."
+    },
+    {
+      "text": "research-focus.md defines LLM for Education-specific priorities (e.g., Educational Applications, LLM Techniques, Foundational Work)",
+      "passed": true,
+      "evidence": "research-focus.md defines 3 LLM for Education-specific priorities: Priority 1 (Educational Applications & Impact), Priority 2 (LLM Techniques for Education), Priority 3 (Foundational Work & Theory)."
+    },
+    {
+      "text": "research-focus.md contains 30-50 search queries distributed across priorities",
+      "passed": true,
+      "evidence": "research-focus.md contains 38 search queries distributed across the 3 priority levels (15 in Priority 1, 11 in Priority 2, 12 in Priority 3)."
+    },
+    {
+      "text": "classification-guide.md defines tags with color-coded badge URLs",
+      "passed": true,
+      "evidence": "classification-guide.md defines 4 categories with 12 tags, each with explicit color codes and badge URLs. Example: 'https://img.shields.io/badge/Tutoring_System-0052cc', 'https://img.shields.io/badge/Instruction_Tuning-008754', etc."
+    },
+    {
+      "text": "CLAUDE.md specifies git workflow (commit only README files, proper commit message format)",
+      "passed": true,
+      "evidence": "CLAUDE.md contains explicit Git Workflow section: 'Commit: Only README.md and README_zh.md', 'Never commit: CLAUDE.md, .gitignore, paper_notes/, reference .md files, chat history', with commit format examples: 'Add: Add paper: Title (Venue Year)', 'Update: Update paper: Title - description', 'Fix: Fix: issue description'."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "All assertions passed and are well-designed, checking both file existence and content substance. The evals appropriately verify domain-specific customization (LLM for Education priorities) and practical implementation details (git workflow, badge URLs)."
+  }
+}

@@ -1,0 +1,32 @@
+# Synthetic Data Generation Configuration
+
+model:
+  name: "gpt2"  # or "gpt2-medium", "gpt2-large", "gpt-neo-2.7B"
+  temperature: 0.9
+  top_p: 0.95
+  top_k: 50
+  max_length: 512
+
+data:
+  source: "data/real"  # Source data for generation
+  output_dir: "data/synthetic"
+  samples_per_prompt: 5
+  total_samples: 100000
+
+generation:
+  mode: "random"  # random, diverse, quality-focused
+  diversity_penalty: 0.0  # Higher = more diverse
+  repetition_penalty: 1.0
+  num_return_sequences: 5
+
+quality:
+  filter_enabled: true
+  min_length: 50
+  max_length: 500
+  perplexity_threshold: 100
+  diversity_threshold: 0.7
+
+logging:
+  wandb_project: "synthetic-data-homogenization"
+  log_every: 100
+  save_every: 1000

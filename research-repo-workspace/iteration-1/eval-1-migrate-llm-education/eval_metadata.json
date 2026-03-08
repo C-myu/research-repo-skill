@@ -1,0 +1,6 @@
+{
+  "eval_id": 1,
+  "eval_name": "migrate-llm-education",
+  "prompt": "Help me migrate my existing literature collection on LLM for Education to an AI-assisted research workflow. I want to set up standardized tagging, automated search, and paper tracking with git-based version control.",
+  "assertions": []
+}

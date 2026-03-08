@@ -1,0 +1,106 @@
+{
+  "skill_name": "research-repo",
+  "iteration": 1,
+  "summary": {
+    "with_skill": {
+      "pass_rate": 0.877,
+      "pass_rate_stddev": 0.089,
+      "avg_time_seconds": null,
+      "avg_time_stddev": null,
+      "avg_tokens": null,
+      "avg_tokens_stddev": null
+    },
+    "without_skill": {
+      "pass_rate": 0.333,
+      "pass_rate_stddev": 0.471,
+      "avg_time_seconds": null,
+      "avg_time_stddev": null,
+      "avg_tokens": null,
+      "avg_tokens_stddev": null
+    }
+  },
+  "delta": {
+    "pass_rate": 0.543,
+    "avg_time_seconds": null,
+    "avg_tokens": null
+  },
+  "evals": [
+    {
+      "eval_id": 0,
+      "eval_name": "initialize-ai-mental-health",
+      "configurations": [
+        {
+          "name": "with_skill",
+          "pass_rate": 0.833,
+          "total_assertions": 6,
+          "passed_assertions": 5,
+          "time_seconds": null,
+          "tokens": null
+        },
+        {
+          "name": "without_skill",
+          "pass_rate": 0.0,
+          "total_assertions": 6,
+          "passed_assertions": 0,
+          "time_seconds": null,
+          "tokens": null
+        }
+      ]
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "migrate-llm-education",
+      "configurations": [
+        {
+          "name": "with_skill",
+          "pass_rate": 1.0,
+          "total_assertions": 5,
+          "passed_assertions": 5,
+          "time_seconds": null,
+          "tokens": null
+        },
+        {
+          "name": "without_skill",
+          "pass_rate": 1.0,
+          "total_assertions": 5,
+          "passed_assertions": 5,
+          "time_seconds": null,
+          "tokens": null
+        }
+      ]
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "quantum-computing-bilingual",
+      "configurations": [
+        {
+          "name": "with_skill",
+          "pass_rate": 0.8,
+          "total_assertions": 5,
+          "passed_assertions": 4,
+          "time_seconds": null,
+          "tokens": null
+        },
+        {
+          "name": "without_skill",
+          "pass_rate": 0.0,
+          "total_assertions": 5,
+          "passed_assertions": 0,
+          "time_seconds": null,
+          "tokens": null
+        }
+      ]
+    }
+  ],
+  "analyst_observations": [
+    "**Key Issue - Skills Not Created**: Both with_skill runs (eval-0 and eval-2) failed to create the actual skill.md files for search-papers and add-paper, creating only empty directories. This is a critical failure that needs to be addressed.",
+    "",
+    "**without_skill High Variance**: without_skill performed well on eval-1 (100% pass rate) but failed completely on eval-0 and eval-2 (0% pass rate). This suggests the task complexity varies significantly - some scenarios are simple enough for general AI assistance, while others require structured guidance.",
+    "",
+    "**with_skill Consistency**: with_skill showed consistent performance across all three evals (83%, 100%, 80%), with only the skills creation issue preventing perfect scores. This demonstrates the skill provides reliable structure and guidance.",
+    "",
+    "**Overall Effectiveness**: with_skill outperformed without_skill by 54.3 percentage points on average (87.7% vs 33.3%), showing the skill provides significant value, especially for more complex scenarios like bilingual support and domain-specific customization.",
+    "",
+    "**Recommendation**: Fix the skills creation workflow to ensure search-papers/SKILL.md and add-paper/SKILL.md are actually created with content, not just empty directories."
+  ]
+}

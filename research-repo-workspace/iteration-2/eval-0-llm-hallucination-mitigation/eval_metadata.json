@@ -1,0 +1,31 @@
+{
+  "eval_id": 0,
+  "eval_name": "llm-hallucination-mitigation",
+  "prompt": "I want to create a research repository for tracking papers on LLM hallucination mitigation techniques. Focus areas: hallucination detection methods (highest priority), alignment and training techniques to reduce hallucinations, and evaluation benchmarks for factuality.",
+  "assertions": [
+    {
+      "name": "core_files_created",
+      "text": "Core configuration files exist: README.md, CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE"
+    },
+    {
+      "name": "git_initialized",
+      "text": "Git repository initialized with initial commit"
+    },
+    {
+      "name": "skills_created_with_content",
+      "text": "Domain-specific skills created: .claude/skills/search-papers/SKILL.md and .claude/skills/add-paper/SKILL.md exist with content"
+    },
+    {
+      "name": "skills_references",
+      "text": "Skills have reference files: search-papers/references/queries.md and add-paper/references/notes-template.md exist"
+    },
+    {
+      "name": "research_focus_priorities",
+      "text": "research-focus.md contains 3 priority levels with search queries"
+    },
+    {
+      "name": "classification_tags",
+      "text": "classification-guide.md contains tag categories with color-coded badges"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "project": {
+    "name": "LLM Quantitative Finance Research",
+    "version": "1.0.0",
+    "description": "Research repository for LLM applications in quantitative finance",
+    "focus_areas": [
+      "financial-analysis",
+      "prediction",
+      "risk-management",
+      "portfolio-optimization",
+      "sentiment-analysis"
+    ]
+  },
+  "data": {
+    "market_data_path": "data/market",
+    "sentiment_data_path": "data/sentiment",
+    "fundamental_data_path": "data/fundamental",
+    "alternative_data_path": "data/alternative",
+    "processed_data_path": "data/processed"
+  },
+  "code": {
+    "experiments_path": "code/experiments",
+    "models_path": "code/models",
+    "analysis_path": "code/analysis",
+    "metrics_path": "code/metrics"
+  },
+  "output": {
+    "results_path": "outputs",
+    "logs_path": "logs",
+    "checkpoints_path": "checkpoints"
+  },
+  "tags": {
+    "primary": [
+      "llm",
+      "quantitative-finance",
+      "financial-analysis",
+      "prediction",
+      "risk-management",
+      "portfolio-optimization",
+      "sentiment-analysis"
+    ],
+    "instruments": [
+      "equities",
+      "fixed-income",
+      "derivatives",
+      "forex",
+      "crypto",
+      "commodities"
+    ],
+    "methods": [
+      "time-series",
+      "nlp",
+      "deep-learning",
+      "transformer",
+      "reinforcement-learning",
+      "ensemble-methods"
+    ],
+    "applications": [
+      "trading",
+      "investment",
+      "risk-assessment",
+      "compliance",
+      "fraud-detection",
+      "market-making"
+    ]
+  }
+}

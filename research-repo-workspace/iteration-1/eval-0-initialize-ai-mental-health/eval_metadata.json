@@ -1,0 +1,6 @@
+{
+  "eval_id": 0,
+  "eval_name": "initialize-ai-mental-health",
+  "prompt": "I want to create a research repository for tracking AI for Mental Health papers. The focus should be on multi-turn dialogue systems for mental health support. I need help setting up the directory structure, configuration files, and domain-specific skills.",
+  "assertions": []
+}

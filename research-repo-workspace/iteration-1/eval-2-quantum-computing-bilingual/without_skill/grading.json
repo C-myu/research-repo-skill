@@ -1,0 +1,40 @@
+{
+  "assertions_evaluated": [
+    {
+      "text": "Both README.md (English) and README_zh.md (Chinese) exist with translated content",
+      "passed": false,
+      "evidence": "Only README.md exists. There is no separate README_zh.md file. The README.md file contains both English and Chinese sections in a single file, but the assertion specifically requires separate README.md and README_zh.md files."
+    },
+    {
+      "text": "research-focus.md defines quantum-specific priorities: Algorithms (P1), Hardware (P2), Applications (P3)",
+      "passed": false,
+      "evidence": "research-focus.md does not exist. The repository has a different structure with papers/algorithms/, papers/hardware/, and papers/applications/ directories, but no research-focus.md file defining priorities."
+    },
+    {
+      "text": "classification-guide.md defines quantum-specific tags (e.g., VQA, QAOA, Error_Correction, Fault_Tolerant)",
+      "passed": false,
+      "evidence": "classification-guide.md does not exist. The README.md mentions tags like 'quantum-algorithms', 'quantum-hardware', 'quantum-applications', 'ml', 'optimization', 'cryptography', 'error-correction', but there is no classification-guide.md with detailed tag definitions or color-coded badge URLs."
+    },
+    {
+      "text": "Domain-specific skills created: .claude/skills/search-papers/ and .claude/skills/add-paper/",
+      "passed": false,
+      "evidence": "The .claude/skills/ directory does not exist. The repository has a .research-repo/skills/ directory instead, which is a different structure than specified in the assertion."
+    },
+    {
+      "text": "README files contain badge URLs for tags with proper color coding",
+      "passed": false,
+      "evidence": "The README.md file does not contain any badge URLs (img.shields.io). It only lists tags as plain text without color-coded badges. The assertion requires actual badge URLs with proper color coding."
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 5,
+    "total": 5,
+    "pass_rate": 0.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "All assertions failed appropriately. The without_skill run created a different repository structure (single bilingual README, .research-repo/ instead of .claude/, plain text tags instead of badges) that does not match the research-repo skill template requirements."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "eval_id": 1,
+  "eval_name": "synthetic-data-homogenization",
+  "prompt": "Help me set up a research repository for investigating synthetic data homogenization in LLM training. I want to track research on model collapse, diversity preservation in synthetic data, and strategies to maintain model capabilities when training on generated data.",
+  "assertions": [
+    {
+      "name": "core_files_created",
+      "text": "Core configuration files exist: README.md, CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE"
+    },
+    {
+      "name": "git_initialized",
+      "text": "Git repository initialized with initial commit"
+    },
+    {
+      "name": "skills_created_with_content",
+      "text": "Domain-specific skills created: .claude/skills/search-papers/SKILL.md and .claude/skills/add-paper/SKILL.md exist with content"
+    },
+    {
+      "name": "skills_references",
+      "text": "Skills have reference files: search-papers/references/queries.md and add-paper/references/notes-template.md exist"
+    },
+    {
+      "name": "research_focus_priorities",
+      "text": "research-focus.md contains 3 priority levels with search queries"
+    },
+    {
+      "name": "classification_tags",
+      "text": "classification-guide.md contains tag categories with color-coded badges"
+    }
+  ]
+}

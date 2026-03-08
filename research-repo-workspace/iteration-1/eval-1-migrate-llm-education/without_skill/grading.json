@@ -1,0 +1,40 @@
+{
+  "assertions_evaluated": [
+    {
+      "text": "Core configuration files exist: CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE",
+      "passed": true,
+      "evidence": "All 5 core files exist: CLAUDE.md (2433 bytes), research-focus.md (6913 bytes), classification-guide.md (9680 bytes), .gitignore (202 bytes), LICENSE (1087 bytes)."
+    },
+    {
+      "text": "research-focus.md defines LLM for Education-specific priorities (e.g., Educational Applications, LLM Techniques, Foundational Work)",
+      "passed": true,
+      "evidence": "research-focus.md defines 3 LLM for Education-specific priorities: Priority 1 (LLM-Powered Educational Applications), Priority 2 (Evaluation Methodologies and Learning Measurements), Priority 3 (Foundational LLM Capabilities and Educational Theory)."
+    },
+    {
+      "text": "research-focus.md contains 30-50 search queries distributed across priorities",
+      "passed": true,
+      "evidence": "research-focus.md contains 50 search queries distributed across priorities (15 in Priority 1, 17 in Priority 2, 18 in Priority 3), meeting the requirement of 30-50 queries."
+    },
+    {
+      "text": "classification-guide.md defines tags with color-coded badge URLs",
+      "passed": true,
+      "evidence": "classification-guide.md defines 4 categories with 16 tags, each with explicit color codes and badge URLs. Example: 'https://img.shields.io/badge/Personalized_Learning-0052cc', 'https://img.shields.io/badge/K12-008754', etc."
+    },
+    {
+      "text": "CLAUDE.md specifies git workflow (commit only README files, proper commit message format)",
+      "passed": true,
+      "evidence": "CLAUDE.md contains explicit Git Workflow section: 'Commit: Only README.md', 'Never commit: CLAUDE.md, .gitignore, paper_notes/, reference .md files, chat history', with commit format examples: 'Add: Add paper: Title (Venue Year)', 'Update: Update paper: Title - description', 'Fix: Fix: issue description'."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "All assertions passed. The without_skill run performed equally well on this eval, creating comprehensive configuration files with proper domain-specific customization. The evals effectively check for substance beyond just file existence."
+  }
+}

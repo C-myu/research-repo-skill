@@ -1,0 +1,49 @@
+{
+  "expectations": [
+    {
+      "text": "Core configuration files exist: README.md, CLAUDE.md, research-focus.md, classification-guide.md, .gitignore, LICENSE",
+      "passed": false,
+      "evidence": "Only README.md, SETUP_SUMMARY.md, .gitignore, and requirements.txt exist. Missing CLAUDE.md, research-focus.md, and classification-guide.md which are core to the research-repo skill structure."
+    },
+    {
+      "text": "Git repository initialized with initial commit",
+      "passed": false,
+      "evidence": "No .git directory exists in synthetic-data-repo/."
+    },
+    {
+      "text": "Domain-specific skills created: .claude/skills/search-papers/SKILL.md and .claude/skills/add-paper/SKILL.md exist with content",
+      "passed": false,
+      "evidence": "No .claude directory exists at all."
+    },
+    {
+      "text": "Skills have reference files: search-papers/references/queries.md and add-paper/references/notes-template.md exist",
+      "passed": false,
+      "evidence": "No .claude directory exists, so no skills or reference files."
+    },
+    {
+      "text": "research-focus.md contains 3 priority levels with search queries",
+      "passed": false,
+      "evidence": "research-focus.md does not exist."
+    },
+    {
+      "text": "classification-guide.md contains tag categories with color-coded badges",
+      "passed": false,
+      "evidence": "classification-guide.md does not exist."
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 6,
+    "total": 6,
+    "pass_rate": 0.0
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "Core configuration files exist",
+        "reason": "This assertion correctly distinguishes the research-repo skill structure from general-purpose repository creation. The without_skill output uses a different organizational pattern (papers/, code/, data/, notes/)."
+      }
+    ],
+    "overall": "The without_skill output creates a comprehensive research repository with extensive documentation and code, but follows a general academic project structure rather than the research-repo skill's specific workflow-oriented design."
+  }
+}

@@ -1,0 +1,264 @@
+# Quantum Computing Research Repository Configuration
+# 量子计算研究仓库配置
+
+repository:
+  name: "quantum-computing-repo"
+  description: "Research papers in quantum computing with focus on algorithms, hardware, and applications"
+  description_zh: "量子计算研究论文，重点关注算法、硬件和应用"
+  language: "bilingual"  # Supports both English and Chinese
+
+# Category definitions
+categories:
+  algorithms:
+    name: "Quantum Algorithms"
+    name_zh: "量子算法"
+    description: "Papers on quantum algorithms, complexity, and theory"
+    description_zh: "量子算法、复杂性和理论相关论文"
+    priority: 1  # Highest priority
+    directory: "papers/algorithms"
+    tags:
+      - quantum-algorithms
+      - ml
+      - optimization
+      - cryptography
+      - error-correction
+      - simulation
+
+  hardware:
+    name: "Quantum Hardware"
+    name_zh: "量子硬件"
+    description: "Papers on quantum hardware construction and implementation"
+    description_zh: "量子硬件构建和实现相关论文"
+    priority: 2
+    directory: "papers/hardware"
+    tags:
+      - quantum-hardware
+      - superconducting
+      - trapped-ion
+      - photonic
+      - topological
+      - control-systems
+
+  applications:
+    name: "Quantum Applications"
+    name_zh: "量子应用"
+    description: "Papers on practical applications of quantum computing"
+    description_zh: "量子计算的实际应用相关论文"
+    priority: 3
+    directory: "papers/applications"
+    tags:
+      - quantum-applications
+      - chemistry
+      - finance
+      - sensing
+      - networking
+      - optimization
+
+# Priority levels
+priority_levels:
+  high:
+    value: 1
+    description: "Breakthrough results, fundamental algorithms"
+    description_zh: "突破性结果、基础算法"
+    criteria:
+      - "Novel quantum algorithm with theoretical advantage"
+      - "Experimental demonstration of quantum advantage"
+      - "Major improvement in quantum error correction"
+      - "Significant hardware milestone"
+
+  medium:
+    value: 2
+    description: "Significant improvements, novel applications"
+    description_zh: "重大改进、新颖应用"
+    criteria:
+      - "Improvement to existing quantum algorithms"
+      - "New application area for quantum computing"
+      - "Hardware optimization or improvement"
+      - "Useful quantum algorithm for specific problem"
+
+  low:
+    value: 3
+    description: "Incremental improvements, specialized topics"
+    description_zh: "渐进式改进、专业主题"
+    criteria:
+      - "Minor optimization or improvement"
+      - "Specialized or narrow application"
+      - "Survey or review papers"
+      - "Educational materials"
+
+# Paper metadata fields
+metadata_fields:
+  - name: title
+    required: true
+    bilingual: true
+
+  - name: authors
+    required: true
+    type: list
+
+  - name: year
+    required: true
+    type: number
+
+  - name: arxiv_id
+    required: false
+
+  - name: doi
+    required: false
+
+  - name: venue
+    required: false
+    bilingual: true
+
+  - name: category
+    required: true
+    type: enum
+    values: [algorithms, hardware, applications]
+
+  - name: priority
+    required: true
+    type: enum
+    values: [high, medium, low]
+    default: medium
+
+  - name: tags
+    required: false
+    type: list
+
+  - name: abstract
+    required: false
+    bilingual: true
+
+  - name: notes
+    required: false
+    bilingual: true
+
+  - name: date_added
+    required: true
+    auto_generate: true
+
+  - name: date_read
+    required: false
+    type: date
+
+  - name: rating
+    required: false
+    type: number
+    min: 1
+    max: 5
+
+# Tag system
+tags:
+  quantum-algorithms:
+    name: "Quantum Algorithms"
+    name_zh: "量子算法"
+    color: "blue"
+
+  quantum-hardware:
+    name: "Quantum Hardware"
+    name_zh: "量子硬件"
+    color: "green"
+
+  quantum-applications:
+    name: "Quantum Applications"
+    name_zh: "量子应用"
+    color: "purple"
+
+  ml:
+    name: "Machine Learning"
+    name_zh: "机器学习"
+    color: "red"
+
+  optimization:
+    name: "Optimization"
+    name_zh: "优化"
+    color: "orange"
+
+  cryptography:
+    name: "Cryptography"
+    name_zh: "密码学"
+    color: "yellow"
+
+  error-correction:
+    name: "Quantum Error Correction"
+    name_zh: "量子纠错"
+    color: "pink"
+
+  superconducting:
+    name: "Superconducting Qubits"
+    name_zh: "超导量子比特"
+    color: "cyan"
+
+  trapped-ion:
+    name: "Trapped Ions"
+    name_zh: "离子阱"
+    color: "indigo"
+
+  photonic:
+    name: "Photonic Quantum Computing"
+    name_zh: "光量子计算"
+    color: "violet"
+
+  topological:
+    name: "Topological Quantum Computing"
+    name_zh: "拓扑量子计算"
+    color: "teal"
+
+  chemistry:
+    name: "Quantum Chemistry"
+    name_zh: "量子化学"
+    color: "lime"
+
+  finance:
+    name: "Quantum Finance"
+    name_zh: "量子金融"
+    color: "amber"
+
+  sensing:
+    name: "Quantum Sensing"
+    name_zh: "量子传感"
+    color: "emerald"
+
+  networking:
+    name: "Quantum Networking"
+    name_zh: "量子网络"
+    color: "rose"
+
+# Template configuration
+templates:
+  paper_note:
+    path: "templates/paper_note_template.md"
+    bilingual: true
+
+  reading_list:
+    path: "templates/reading_list_template.md"
+    bilingual: true
+
+# Search configuration
+search:
+  index_fields:
+    - title
+    - title_zh
+    - authors
+    - abstract
+    - abstract_zh
+    - tags
+    - category
+
+  default_sort:
+    field: "date_added"
+    order: "descending"
+
+# Output settings
+output:
+  language: "bilingual"  # Can be "en", "zh", or "bilingual"
+  date_format: "%Y-%m-%d"
+  timezone: "UTC"
+
+# Export settings
+export:
+  formats:
+    - markdown
+    - bibtex
+    - json
+  include_metadata: true
