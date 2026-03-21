@@ -1,11 +1,15 @@
 # 📚 Research Repo - AI-Powered Research Repository Builder
 
+<div align="center">
+
 [![](https://img.shields.io/badge/Claude_Code-Skill-blue)](https://claude.com/claude-code)
 [![](https://img.shields.io/badge/Success_Rate-100%25-green)](benchmark.md)
 [![](https://img.shields.io/badge/Improvement-+95%25-brightgreen)](benchmark.md)
 [![](https://img.shields.io/badge/License-MIT-purple)](LICENSE)
 
 [**中文文档**](README_zh.md) | English
+
+</div>
 
 > **A Meta-Skill for Creating Skills**: Research Repo is not just a paper tracker - it's a Claude Code meta-skill that generates domain-specific research workflows with automated paper discovery, classification, and documentation capabilities.
 
