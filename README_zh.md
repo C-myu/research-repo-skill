@@ -1,11 +1,15 @@
 # 📚 Research Repo - AI 驱动的科研论文库构建工具
 
+<div align="center">
+
 [![](https://img.shields.io/badge/Claude_Code-Skill-blue)](https://claude.com/claude-code)
 [![](https://img.shields.io/badge/成功率-100%25-green)](benchmark.md)
 [![](https://img.shields.io/badge/提升幅度-+95%25-brightgreen)](benchmark.md)
 [![](https://img.shields.io/badge/许可证-MIT-purple)](LICENSE)
 
 中文 | [**English**](README.md)
+
+</div>
 
 > **创建技能的元技能**：Research Repo 不仅仅是一个论文追踪工具——它是一个 Claude Code 元技能，能够生成领域特定的科研工作流，具备自动化论文发现、分类和文档化能力。
 
